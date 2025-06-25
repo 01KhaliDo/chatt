@@ -1,0 +1,127 @@
+/* Grundstil */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+/* Användarlista */
+#user-list {
+  width: 200px;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+#user-list h3 {
+  margin-top: 0;
+}
+
+#users {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.user.selected,
+.user:hover {
+  background-color: #ddd;
+}
+
+/* Chattdelen */
+#chat {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#chat h3 {
+  margin-top: 0;
+}
+
+#messages {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+#messages li {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Formulär för input och knapp */
+#form {
+  display: flex;
+}
+
+#input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#send {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+#send:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Mobilanpassning */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #user-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    max-height: 150px;
+  }
+
+  #chat {
+    padding: 10px 5px;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  #send {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
